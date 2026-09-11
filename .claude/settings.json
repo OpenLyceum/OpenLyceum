@@ -1,12 +1,4 @@
 {
-  "extraKnownMarketplaces": {
-    "openlyceum": {
-      "source": { "source": "github", "repo": "OpenLyceum/Baton" }
-    }
-  },
-  "enabledPlugins": {
-    "scenerystack@openlyceum": true
-  },
   "permissions": {
     "allow": [
       "mcp__playwright__browser_take_screenshot",
@@ -21,5 +13,16 @@
       "Bash(npm test *)",
       "Bash(scripts/parse-repos.sh *)"
     ]
+  },
+  "enabledPlugins": {
+    "scenerystack@baton": true
+  },
+  "extraKnownMarketplaces": {
+    "baton": {
+      "source": {
+        "source": "github",
+        "repo": "OpenLyceum/Baton"
+      }
+    }
   }
 }
