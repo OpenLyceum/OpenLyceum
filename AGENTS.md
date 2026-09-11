@@ -1,4 +1,4 @@
-# AGENTS.md — OpenPhysics superproject
+# AGENTS.md — OpenLyceum superproject
 
 This repo is a **thin workspace bootstrapper**, not an application. It tracks only `README.md`, `bootstrap.sh`, `.gitignore`, and this file. Every member repo (`Baton/`, `.github/`, the sims, `Almanach/`, `jscd48/`, …) is an **independent git repo** cloned in by `bootstrap.sh` and gitignored here, so `git status` in the superproject stays clean no matter what state they're in.
 
@@ -23,7 +23,7 @@ Authoritative docs are **not** in this superproject — they live in the cloned 
 
 - **`Baton/structure/repos.json`** — machine-readable catalog of every org repo. The bootstrapper, compliance audit, Pages index, and every `Baton/scripts/*` tool read it. A repo missing from this file is invisible to the tooling.
 - **`Baseline/`** — immutable upstream ground truth for sims (`baselines.json` + `scripts/fetch-baselines.sh` for pinned git clones; non-git snapshots committed in-tree). Listed in the catalog as `type: tool`.
-- **`Baton/.github/workflows/*.yml`** — reusable CI/CD (`ci`, `deploy`, `shared-codeql`, `shared-dependency-review`, `shared-compliance-check`, `fleet-health`, `fleet-exec`, `pages`). Each sim's `ci.yml` calls `uses: OpenPhysics/Baton/.github/workflows/ci.yml@main`.
+- **`Baton/.github/workflows/*.yml`** — reusable CI/CD (`ci`, `deploy`, `shared-codeql`, `shared-dependency-review`, `shared-compliance-check`, `fleet-health`, `fleet-exec`, `pages`). Each sim's `ci.yml` calls `uses: OpenLyceum/Baton/.github/workflows/ci.yml@main`.
 - **`Baton/scripts/`** — fleet tooling. High-use commands:
   - `Baton/scripts/parse-repos.sh names --simulation` — list simulation repo names
   - `Baton/scripts/check-repo-compliance.sh <repo>` — local compliance audit for one sim

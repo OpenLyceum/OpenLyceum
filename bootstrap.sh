@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Bootstrap the OpenPhysics workspace.
+# Bootstrap the OpenLyceum workspace.
 #
 # This superproject is a thin aggregator with no submodules. Running this script
 # clones the org's orchestration repo (Baton) and then hands off to Baton's
@@ -19,7 +19,22 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ORG="OpenPhysics"
+
+# The org name is read from this checkout's own origin remote, so renaming the
+# organization needs no edit here. Everything downstream reads it from Baton's
+# catalog instead; this is the one place that cannot, since Baton is what we are
+# about to clone. Override with FLEET_ORG; the literal is a last resort for a
+# tarball download with no git remote.
+derive_org() {
+  local url
+  url="$(git -C "$ROOT" remote get-url origin 2>/dev/null)" || return 1
+  # Strip scheme, optional user@, and host - handles scp-style (host:path),
+  # https:// and ssh:// remotes alike - then take the first path component.
+  url="$(sed -E 's#^([a-zA-Z][a-zA-Z0-9+.-]*://)?([^/@]+@)?[^/:]+[:/]+##' <<<"$url")"
+  printf '%s\n' "${url%%/*}"
+}
+ORG="${FLEET_ORG:-$(derive_org || true)}"
+ORG="${ORG:-OpenLyceum}"
 BATON_URL="git@github.com:${ORG}/Baton.git"
 
 # Match Baton's clone scheme to the one requested for the rest of the fleet.

@@ -1,25 +1,25 @@
-# OpenPhysics
+# OpenLyceum
 
-Thin **workspace bootstrapper** for the [OpenPhysics](https://github.com/OpenPhysics)
+Thin **workspace bootstrapper** for the [OpenLyceum](https://github.com/OpenLyceum)
 organization. This repo tracks only a README and a `bootstrap.sh` script; it has **no
 submodules**. Running the script clones the whole org — every simulation, the shared
 infrastructure, and the hardware/tooling libraries — side by side in one directory, which is
 exactly the layout the Baton scripts expect.
 
 Each member repo stays a fully independent git repo with its own remote, branches, issues, and
-release cadence. There are no submodule pointers to bump: [`Baton/structure/repos.json`](https://github.com/OpenPhysics/Baton/blob/main/structure/repos.json)
+release cadence. There are no submodule pointers to bump: [`Baton/structure/repos.json`](https://github.com/OpenLyceum/Baton/blob/main/structure/repos.json)
 is the single source of truth for what the org contains.
 
 ## Setup
 
 ```bash
-git clone git@github.com:OpenPhysics/OpenPhysics.git
-cd OpenPhysics
+git clone git@github.com:OpenLyceum/OpenLyceum.git
+cd OpenLyceum
 ./bootstrap.sh
 ```
 
 `bootstrap.sh` clones `Baton` (which carries the catalog) and then hands off to
-[`Baton/scripts/clone-fleet.sh`](https://github.com/OpenPhysics/Baton/blob/main/scripts/clone-fleet.sh),
+[`Baton/scripts/clone-fleet.sh`](https://github.com/OpenLyceum/Baton/blob/main/scripts/clone-fleet.sh),
 which clones every repo in the catalog as a sibling directory here. It is **re-runnable** —
 repos already present are skipped:
 
@@ -40,14 +40,14 @@ After `./bootstrap.sh`, the workspace holds two infrastructure repos plus the me
 
 | Repo | Type | Purpose |
 |---|---|---|
-| [`.github`](https://github.com/OpenPhysics/.github) | config | Org community-health defaults (license, contributing, code of conduct, security, issue/PR templates, org profile) **plus** shared AI-assistant guidance (`CLAUDE.md`). GitHub requires these in the special `.github` repo. |
-| [`Baton`](https://github.com/OpenPhysics/Baton) | tool | Org **orchestration**: reusable CI/CD workflows, the cross-repo automation scripts, Dependabot templates, the machine-readable repo catalog (`structure/repos.json`), fleet conventions (`CONVENTIONS.md`, `ACCESSIBILITY.md`), SceneryStack AI reference docs (`skills/`), and the GitHub Pages landing page. |
-| [`Baseline`](https://github.com/OpenPhysics/Baseline) | tool | Immutable upstream **ground truth** for sims: pinned git clones (`scripts/fetch-baselines.sh`) and committed non-git snapshots (NAAP dumps, SPINS, etc.). |
-| [`Almanach`](https://github.com/OpenPhysics/Almanach) | tool | File-based SceneryStack knowledge base (API guides, software patterns, styling, accessibility conventions) for humans and LLM agents, published at [openphysics.github.io/Almanach](https://openphysics.github.io/Almanach/). |
-| [`SceneryStackTemplate`](https://github.com/OpenPhysics/SceneryStackTemplate) | template | GitHub template + `npm run rename` / `scaffold-screens` — new sims via **Use this template** or `Baton/scripts/create-sim.sh`. |
+| [`.github`](https://github.com/OpenLyceum/.github) | config | Org community-health defaults (license, contributing, code of conduct, security, issue/PR templates, org profile) **plus** shared AI-assistant guidance (`CLAUDE.md`). GitHub requires these in the special `.github` repo. |
+| [`Baton`](https://github.com/OpenLyceum/Baton) | tool | Org **orchestration**: reusable CI/CD workflows, the cross-repo automation scripts, Dependabot templates, the machine-readable repo catalog (`structure/repos.json`), fleet conventions (`CONVENTIONS.md`, `ACCESSIBILITY.md`), SceneryStack AI reference docs (`skills/`), and the GitHub Pages landing page. |
+| [`Baseline`](https://github.com/OpenLyceum/Baseline) | tool | Immutable upstream **ground truth** for sims: pinned git clones (`scripts/fetch-baselines.sh`) and committed non-git snapshots (NAAP dumps, SPINS, etc.). |
+| [`Almanach`](https://github.com/OpenLyceum/Almanach) | tool | File-based SceneryStack knowledge base (API guides, software patterns, styling, accessibility conventions) for humans and LLM agents, published at [openlyceum.github.io/Almanach](https://openlyceum.github.io/Almanach/). |
+| [`SceneryStackTemplate`](https://github.com/OpenLyceum/SceneryStackTemplate) | template | GitHub template + `npm run rename` / `scaffold-screens` — new sims via **Use this template** or `Baton/scripts/create-sim.sh`. |
 | `ACPhasor`, `BasicCoordinatesAndSeasons`, `CarnotHeatEngine`, `CrystalLattice`, `DopplerEffect`, `ElectricFieldOfDreams`, `ExtrasolarPlanets`, `FieldBoundary`, `FluidDynamics`, `FluidPressureAndFlow`, `HabitableZones`, `HeatTransfer`, `InterferometryLab`, `LadyBug`, `LightPropagation`, `LunarLander`, `MazeGame`, `MotionMatch`, `MotionSensor`, `MotionsOfTheSun`, `MovingMan`, `OpticsLab`, `OscillationsAndChaos`, `Oscilloscope`, `PlateTectonics`, `Precession`, `QubitSketch`, `RadioactivityAndStatistics`, `RadioWaves`, `Resonance`, `RotatingSky`, `SolarSystemModels`, `SpecialRelativity`, `StandingWaves`, `SternGerlach`, `TheRamp`, `TrackLab`, `VariableStarPhotometry`, `VernierScales`, `WaveComposer`, `Zenith` | simulation | SceneryStack TypeScript simulations. |
 | `jscd48`, `tscd48`, `pycd48` | hardware-interface | CD48 hardware libraries — `jscd48`/`tscd48` use MIT, `pycd48` uses GPLv3; none inherit the org AGPL default. |
-| [`pyro`](https://github.com/OpenPhysics/pyro) | tool | Browser-based VPython editor (CodeMirror 6 + GlowScript VPython 3.2) with live 3D visualization. |
+| [`pyro`](https://github.com/OpenLyceum/pyro) | tool | Browser-based VPython editor (CodeMirror 6 + GlowScript VPython 3.2) with live 3D visualization. |
 
 > **`.github` vs `Baton`:** `.github` holds only what GitHub *must* serve from the special repo
 > (community health + org-wide `CLAUDE.md`). Everything operational — CI workflows, catalog,
@@ -56,7 +56,7 @@ After `./bootstrap.sh`, the workspace holds two infrastructure repos plus the me
 
 `Baton/structure/repos.json` is the source of truth for what exists in the org. The bootstrapper,
 the compliance audit, the Pages landing page, and every `Baton/scripts/*` tool read it. The
-scripts default `OPENPHYSICS_WORKSPACE` to this directory, so they find sibling repos with no
+scripts default `FLEET_WORKSPACE` to this directory, so they find sibling repos with no
 extra configuration.
 
 ## Common tasks
@@ -82,7 +82,7 @@ checkout. See [`Baton/doc/fleet-git.md`](Baton/doc/fleet-git.md) for details.
 
 ```bash
 # one-time: put `fleet` on your PATH
-ln -sfn ~/OpenPhysics/Baton/scripts/fleet ~/.local/bin/fleet
+ln -sfn ~/OpenLyceum/Baton/scripts/fleet ~/.local/bin/fleet
 
 fleet push
 fleet pull --ff-only
@@ -98,8 +98,8 @@ fleet --simulation log -1 --oneline
 # simulations only: Baton/scripts/clone-fleet.sh --simulation --update
 ```
 
-See [`Baton/README.md`](https://github.com/OpenPhysics/Baton/blob/main/README.md) for
-orchestration and [`Baton/scripts/README.md`](https://github.com/OpenPhysics/Baton/blob/main/scripts/README.md)
+See [`Baton/README.md`](https://github.com/OpenLyceum/Baton/blob/main/README.md) for
+orchestration and [`Baton/scripts/README.md`](https://github.com/OpenLyceum/Baton/blob/main/scripts/README.md)
 for the full tooling reference.
 
 ## Working in a member repo
