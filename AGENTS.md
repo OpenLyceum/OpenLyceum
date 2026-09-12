@@ -1,6 +1,6 @@
 # AGENTS.md — OpenLyceum superproject
 
-This repo is a **thin workspace bootstrapper**, not an application. It tracks only `README.md`, `bootstrap.sh`, `.gitignore`, and this file. Every member repo (`Baton/`, `.github/`, the sims, `Almanach/`, `jscd48/`, …) is an **independent git repo** cloned in by `bootstrap.sh` and gitignored here, so `git status` in the superproject stays clean no matter what state they're in.
+This repo is a **thin workspace bootstrapper**, not an application. It tracks only `README.md`, `bootstrap.sh`, `.gitignore`, and this file. Every member repo (`Baton/`, `.github/`, the sims, `Almanach/`, …) is an **independent git repo** cloned in by `bootstrap.sh` and gitignored here, so `git status` in the superproject stays clean no matter what state they're in.
 
 ## Before doing anything
 
