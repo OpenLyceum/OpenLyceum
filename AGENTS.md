@@ -12,8 +12,8 @@ This repo is a **thin workspace bootstrapper**, not an application. It tracks on
 
 Authoritative docs are **not** in this superproject — they live in the cloned repos. Check the layered sources before guessing:
 
-1. **Sim-specific** → `<Sim>/CLAUDE.md` (architecture, key files, physics, quirks). Read this first when working in a sim.
-2. **All SceneryStack sims** → `.github/CLAUDE.md` — tech stack, the bootstrap import chain, standard layout, coding conventions, SceneryStack module paths, CI, git hooks, tests. The single richest shared reference; do not duplicate it here.
+1. **Sim-specific** → `<Sim>/AGENTS.md` (architecture, key files, physics, quirks). Read this first when working in a sim.
+2. **All SceneryStack sims** → `.github/AGENTS.md` — tech stack, the bootstrap import chain, standard layout, coding conventions, SceneryStack module paths, CI, git hooks, tests. The single richest shared reference; do not duplicate it here.
 3. **Deep per-topic** → `Baton/skills/` (index: `Baton/skills/README.md`) and `Almanach/` (VitePress knowledge base; generated `Almanach/docs/public/llms.txt` / `llms-full.txt` are LLM-consumable).
 4. **Structure & accessibility rules** → `Baton/CONVENTIONS.md` and `Baton/ACCESSIBILITY.md`, enforced by Baton's compliance check.
 
@@ -34,15 +34,15 @@ Authoritative docs are **not** in this superproject — they live in the cloned 
 
 ## `.github` vs `Baton` split
 
-- **`.github/`** — only what GitHub *must* serve from the special repo: community-health defaults (`CONTRIBUTING.md`, `LICENSE`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, issue/PR templates, org profile) **plus** the shared `.github/CLAUDE.md`. Its local `.github/.github/workflows/` only deploys the org profile page.
+- **`.github/`** — only what GitHub *must* serve from the special repo: community-health defaults (`CONTRIBUTING.md`, `LICENSE`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, issue/PR templates, org profile) **plus** the shared `.github/AGENTS.md`. Its local `.github/.github/workflows/` only deploys the org profile page.
 - **`Baton/`** — everything operational: CI workflows, catalog, scripts, conventions, skills, Pages.
 - Don't add workflows to `.github`, and don't add community-health files to `Baton`.
 
 ## Conventions that bite if missed
 
-- **Sim repos use `CLAUDE.md`, not `AGENTS.md`.** Do **not** create `AGENTS.md` inside a member repo — it violates org convention (`.github/README.md`). This `AGENTS.md` exists only at the superproject level, for OpenCode.
+- **Sim repos use `AGENTS.md`, not `CLAUDE.md`.** Each member sim (and `.github`) keeps an `AGENTS.md` for AI-assistant guidance; do not add a parallel `CLAUDE.md`.
 - **Compliance check (sims) FAILs on:** a root `CONTRIBUTING.md` or `LICENSE` (use the org defaults from `.github`); a `README.md` without exactly six sections **in order** — Features → Quick Start → Scripts → Tech Stack → License → Contributing (no extra top-level sections); a `.github/workflows/ci.yml` that doesn't call Baton's reusable CI.
-- **TS6 + Biome, not ESLint/Prettier.** No `enum`, no `namespace`, `import type` for type-only imports, `.js` extensions in `.ts` import paths. Full list in `.github/CLAUDE.md`. Run `npm run lint && npm run check && npm run build` (plus `npm test` if defined) inside the sim before a PR.
+- **TS6 + Biome, not ESLint/Prettier.** No `enum`, no `namespace`, `import type` for type-only imports, `.js` extensions in `.ts` import paths. Full list in `.github/AGENTS.md`. Run `npm run lint && npm run check && npm run build` (plus `npm test` if defined) inside the sim before a PR.
 - **Git hooks** (`.githooks/` in each sim) auto-activate on `npm install`: pre-commit runs `npm run fix` on staged files, pre-push runs `lint` + `check`. Bypass only with `git commit/push --no-verify`.
 
 ## Tracking new files in this superproject

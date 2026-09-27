@@ -40,7 +40,7 @@ After `./bootstrap.sh`, the workspace holds two infrastructure repos plus the me
 
 | Repo | Type | Purpose |
 |---|---|---|
-| [`.github`](https://github.com/OpenLyceum/.github) | config | Org community-health defaults (license, contributing, code of conduct, security, issue/PR templates, org profile) **plus** shared AI-assistant guidance (`CLAUDE.md`). GitHub requires these in the special `.github` repo. |
+| [`.github`](https://github.com/OpenLyceum/.github) | config | Org community-health defaults (license, contributing, code of conduct, security, issue/PR templates, org profile) **plus** shared AI-assistant guidance (`AGENTS.md`). GitHub requires these in the special `.github` repo. |
 | [`Baton`](https://github.com/OpenLyceum/Baton) | tool | Org **orchestration**: reusable CI/CD workflows, the cross-repo automation scripts, Dependabot templates, the machine-readable repo catalog (`structure/repos.json`), fleet conventions (`CONVENTIONS.md`, `ACCESSIBILITY.md`), SceneryStack AI reference docs (`skills/`), and the GitHub Pages landing page. |
 | [`Baseline`](https://github.com/OpenLyceum/Baseline) | tool | Immutable upstream **ground truth** for sims: pinned git clones (`scripts/fetch-baselines.sh`) and committed non-git snapshots (NAAP dumps, SPINS, etc.). |
 | [`Almanach`](https://github.com/OpenLyceum/Almanach) | tool | File-based SceneryStack knowledge base (API guides, software patterns, styling, accessibility conventions) for humans and LLM agents, published at [openlyceum.github.io/Almanach](https://openlyceum.github.io/Almanach/). |
@@ -48,7 +48,7 @@ After `./bootstrap.sh`, the workspace holds two infrastructure repos plus the me
 | `ACPhasor`, `BasicCoordinatesAndSeasons`, `CapacitorLab`, `CarnotHeatEngine`, `CrystalLattice`, `DopplerEffect`, `ElectricFieldOfDreams`, `ExtrasolarPlanets`, `FieldBoundary`, `FluidDynamics`, `FluidPressureAndFlow`, `HabitableZones`, `HeatTransfer`, `InterferometryLab`, `LadyBug`, `LightPropagation`, `LunarLander`, `MazeGame`, `MercuryElongations`, `MotionMatch`, `MotionSensor`, `MotionsOfTheSun`, `MovingMan`, `OpticsLab`, `OscillationsAndChaos`, `Oscilloscope`, `PlateTectonics`, `Precession`, `QuantumPotential`, `QubitSketch`, `RadioactivityAndStatistics`, `RadioWaves`, `Resonance`, `RotatingSky`, `SolarSystemModels`, `SpecialRelativity`, `StandingWaves`, `SternGerlach`, `TheRamp`, `TrackLab`, `VariableStarPhotometry`, `VernierScales`, `WaveComposer`, `Zenith` | simulation | SceneryStack TypeScript simulations. |
 
 > **`.github` vs `Baton`:** `.github` holds only what GitHub *must* serve from the special repo
-> (community health + org-wide `CLAUDE.md`). Everything operational — CI workflows, catalog,
+> (community health + org-wide `AGENTS.md`). Everything operational — CI workflows, catalog,
 > scripts, fleet conventions, SceneryStack AI skills, Pages — lives in `Baton`. Keep that split:
 > don't add workflows to `.github` or community-health files to `Baton`.
 
