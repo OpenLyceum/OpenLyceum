@@ -43,12 +43,17 @@ Comment-only hits are not gaps: a `new Text("…")` inside a block comment, or a
 
 The follow-ups named below were applied in each sim. `Addressed` means that named gap was fixed. A few probes still match other files, because the log records one path per skill:
 
-- Hardcoded `Text` remains in SternGerlach, Precession, QubitSketch, ACPhasor, MotionsOfTheSun, OscillationsAndChaos, RotatingSky, BasicCoordinatesAndSeasons, Resonance, and QuantumPotential.
-- Color literals remain outside `*Colors.ts` in FluidPressureAndFlow and on the OpticsLab screen icons.
 - TrackLab’s OpenCV tracker and the PlateTectonics globe relief still use an `HTMLCanvasElement` so they can read pixels back.
 - The Vernier caliper, the Rotating Sky coordinate guide, and the Basic Coordinates globe stay pointer-only: their arrow keys are already owned.
 
 MazeGame, ExtrasolarPlanets, CarnotHeatEngine, and SpecialRelativity had no follow-up.
+
+## Remediation — 2026-10-02
+
+The leftover probe matches from 2026-09-30 were cleared:
+
+- Hardcoded `Text` in SternGerlach, Precession, QubitSketch, ACPhasor, MotionsOfTheSun, OscillationsAndChaos, RotatingSky, BasicCoordinatesAndSeasons, Resonance, and QuantumPotential now reads from `strings_*.json`. This covers words, axis titles, symbols, icon glyphs, and brackets. Unit-bearing ticks use pattern strings. Some `Text` literals still remain on purpose: empty placeholders that are filled later, bare numbers, and numbers with a unit symbol that are rebuilt every frame (QubitSketch's `°` and `%`). The template doc comment `new Text("label")` in each `*Panel.ts` also remains.
+- Color literals: FluidPressureAndFlow's sluice gate, hose icon, vacuum sky, and drop zone, and all fixed OpticsLab screen-icon colors, are now `ProfileColorProperty` entries. FluidPressureAndFlow's `fluidColor.ts` density ramp remains a documented exception. Its colors are a continuous function of density, as the header of `FluidPressureAndFlowColors.ts` explains.
 
 ## Sims
 
