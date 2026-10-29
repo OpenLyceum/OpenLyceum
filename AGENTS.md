@@ -30,7 +30,7 @@ Authoritative docs are **not** in this superproject — they live in the cloned 
   - `Baton/scripts/fleet-exec.sh --simulation -- <cmd>` — fan a command across sims (dry-run by default; `--apply` opens one PR per repo and needs a write-scoped `GH_TOKEN` locally, or the `FLEET_PAT` secret when run as the `fleet-exec.yml` workflow)
   - `Baton/scripts/fleet` (or `fleet` on PATH) — ad-hoc git across local checkouts (`fleet status -s`, `fleet pull --ff-only`); cheat sheet: `Baton/doc/fleet-git.md`
 - **`Baton/config/`** — Dependabot + Claude-settings templates synced into member repos.
-- Node version is **24** fleet-wide, kept in sync across all Baton workflows; `Baton/scripts/check-node-version.sh` enforces it (run in `baton-selfcheck.yml`).
+- Node version is **26** fleet-wide, kept in sync across all Baton workflows; `Baton/scripts/check-node-version.sh` enforces it (run in `baton-selfcheck.yml`). Each sim's `devEngines` makes npm refuse to run on an older local Node.
 
 ## `.github` vs `Baton` split
 
@@ -41,7 +41,7 @@ Authoritative docs are **not** in this superproject — they live in the cloned 
 ## Conventions that bite if missed
 
 - **Sim repos use `AGENTS.md`, not `CLAUDE.md`.** Each member sim (and `.github`) keeps an `AGENTS.md` for AI-assistant guidance; do not add a parallel `CLAUDE.md`.
-- **Compliance check (sims) FAILs on:** a root `CONTRIBUTING.md` or `LICENSE` (use the org defaults from `.github`); a `README.md` without exactly six sections **in order** — Features → Quick Start → Scripts → Tech Stack → License → Contributing (no extra top-level sections); a `.github/workflows/ci.yml` that doesn't call Baton's reusable CI, dependency-review, and CodeQL workflows. It also FAILs on a missing `.github/dependabot.yml`, `engines.node` / `@types/node` not matching Node 24, a broken bootstrap chain (`main.ts`'s first import must be `./brand.js`), missing `<Prefix>Namespace.ts` / `<Prefix>Colors.ts` at `src/` root or `*Constants.ts` under `src/`, and a missing `.claude/settings.json` (sync with `Baton/scripts/sync-claude-settings.sh`). Source of truth: `Baton/scripts/check-repo-compliance.sh`.
+- **Compliance check (sims) FAILs on:** a root `CONTRIBUTING.md` or `LICENSE` (use the org defaults from `.github`); a `README.md` without exactly six sections **in order** — Features → Quick Start → Scripts → Tech Stack → License → Contributing (no extra top-level sections); a `.github/workflows/ci.yml` that doesn't call Baton's reusable CI, dependency-review, and CodeQL workflows. It also FAILs on a missing `.github/dependabot.yml`, `engines.node` / `@types/node` / `devEngines.runtime` not matching Node 26, a broken bootstrap chain (`main.ts`'s first import must be `./brand.js`), missing `<Prefix>Namespace.ts` / `<Prefix>Colors.ts` at `src/` root or `*Constants.ts` under `src/`, and a missing `.claude/settings.json` (sync with `Baton/scripts/sync-claude-settings.sh`). Source of truth: `Baton/scripts/check-repo-compliance.sh`.
 - **TypeScript 7 + Biome, not ESLint/Prettier.** No `enum`, no `namespace`, `import type` for type-only imports, `.js` extensions in `.ts` import paths. Full list in `.github/AGENTS.md`. Run `npm run lint && npm run check && npm run build` (plus `npm test` if defined) inside the sim before a PR.
 - **Git hooks** (`.githooks/` in each sim) auto-activate on `npm install`: pre-commit runs `npm run fix` on staged `.ts`/`.js`/`.json`/`.html` files, pre-push runs `lint` + `check`. Bypass only with `git commit/push --no-verify`.
 
