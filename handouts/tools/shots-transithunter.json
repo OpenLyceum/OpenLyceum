@@ -1,0 +1,151 @@
+{
+ "simDir": "../../TransitHunter",
+ "base": "http://localhost:5192/",
+ "outDir": "../TransitHunter/img",
+ "shots": [
+  {
+   "name": "dimming",
+   "query": "screens=1&colorProfile=projector",
+   "settle": 4300
+  },
+  {
+   "name": "lining-up",
+   "query": "screens=2&colorProfile=projector",
+   "settle": 4000
+  },
+  {
+   "name": "light-curve",
+   "query": "screens=3&colorProfile=projector",
+   "steps": [
+    {
+     "role": "slider",
+     "name": "Measurement noise",
+     "keys": [
+      [
+       "ArrowRight",
+       30
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "name": "hunt",
+   "query": "screens=4&colorProfile=projector",
+   "settle": 4000
+  },
+  {
+   "name": "rock-or-gas",
+   "query": "screens=5&colorProfile=projector"
+  },
+  {
+   "name": "key-hunt-hd189733",
+   "query": "screens=4&colorProfile=projector",
+   "settle": 4000,
+   "steps": [
+    {
+     "role": "checkbox",
+     "name": "Search for periods",
+     "keys": [
+      "Space"
+     ],
+     "after": 2500
+    },
+    {
+     "role": "button",
+     "name": "Fold on the strongest",
+     "keys": [
+      "Enter"
+     ],
+     "after": 800
+    }
+   ]
+  },
+  {
+   "name": "key-hunt-kepler10-search",
+   "query": "screens=4&colorProfile=projector",
+   "settle": 4000,
+   "steps": [
+    {
+     "role": "button",
+     "name": "HD 189733 (easy)",
+     "keys": [
+      "Enter",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowDown",
+      "Enter"
+     ],
+     "after": 2500
+    },
+    {
+     "role": "checkbox",
+     "name": "Search for periods",
+     "keys": [
+      "Space"
+     ],
+     "after": 5000
+    }
+   ]
+  },
+  {
+   "name": "key-hunt-kepler10-fold",
+   "query": "screens=4&colorProfile=projector",
+   "settle": 4000,
+   "steps": [
+    {
+     "role": "button",
+     "name": "HD 189733 (easy)",
+     "keys": [
+      "Enter",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowDown",
+      "Enter"
+     ],
+     "after": 2500
+    },
+    {
+     "role": "checkbox",
+     "name": "Reveal the answer",
+     "keys": [
+      "Space"
+     ],
+     "after": 500
+    },
+    {
+     "role": "button",
+     "name": "Fold on Kepler-10 b",
+     "keys": [
+      "Enter"
+     ],
+     "after": 1500
+    },
+    {
+     "role": "checkbox",
+     "name": "Fold the light curve",
+     "keys": [
+      "Space"
+     ],
+     "after": 1500
+    },
+    {
+     "role": "slider",
+     "name": "Depth line",
+     "keys": [
+      [
+       "ArrowLeft",
+       7
+      ],
+      [
+       "Shift+ArrowLeft",
+       7
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{ "simDir": "../../HabitabilityLab", "base": "http://localhost:5194/", "outDir": "../HabitabilityLab/img",
+  "shots": [
+   {"name":"energy-balance","query":"screens=1&colorProfile=projector","settle":6000},
+   {"name":"greenhouse","query":"screens=2&colorProfile=projector","settle":3000},
+   {"name":"zone-edges","query":"screens=3&colorProfile=projector","settle":3000},
+   {"name":"aging-star","query":"screens=4&colorProfile=projector","settle":3000,"steps":[
+     {"div":"Age of the star","keys":[["ArrowRight",73]]}]},
+   {"name":"escape","query":"screens=5&colorProfile=projector","settle":4000},
+   {"name":"escape-shoreline","query":"screens=5&colorProfile=projector","settle":3000,"steps":[{"role":"radio","name":"Cosmic shoreline","keys":["Space"],"after":800}]},
+   {"name":"key-zone-edges-sun","query":"screens=3&colorProfile=projector","settle":3000,"steps":[{"role":"button","name":"Star TRAPPIST-1","keys":["Enter","ArrowUp","Enter"],"after":800}]}
+  ]}

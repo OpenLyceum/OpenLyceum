@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="320" viewBox="0 0 660 320" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Star and planet orbit their center of mass</title>
+<desc>A star and a planet on opposite sides of their common center of mass, each on its own circle with the same period. M-star times a-star equals M-planet times a-planet.</desc>
+<defs></defs>
+<rect width="660" height="320" fill="#ffffff"/>
+<circle cx="200" cy="160" r="140" fill="none" stroke="#2f6db5" stroke-dasharray="6 5" stroke-width="1.5"/>
+<circle cx="200" cy="160" r="34" fill="none" stroke="#9a6a00" stroke-dasharray="4 4" stroke-width="1.5"/>
+<circle cx="166" cy="160" r="26" fill="#f6c445" stroke="#9a6a00" stroke-width="1.5" fill-opacity="0.92"/>
+<circle cx="340" cy="160" r="9" fill="#2f6db5"/>
+<text x="340" y="190" text-anchor="middle" fill="#2f6db5">planet</text>
+<text x="166" y="204" text-anchor="middle" fill="#9a6a00">star</text>
+<path d="M194 154 L206 166 M194 166 L206 154" stroke="#c2185b" stroke-width="2.5"/>
+<text x="208" y="148" fill="#c2185b" font-size="13">center of mass</text>
+<line x1="200" y1="163" x2="330" y2="163" stroke="#2f6db5" stroke-width="1.2"/>
+<text x="280" y="180" fill="#2f6db5" font-style="italic">aₚ</text>
+<line x1="166" y1="157" x2="200" y2="157" stroke="#9a6a00" stroke-width="1.2"/>
+<text x="183" y="124" fill="#9a6a00" font-style="italic" text-anchor="middle">a★</text>
+<line x1="354.0" y1="160.0" x2="354.0" y2="99.8" stroke="#2f6db5" stroke-width="2.5"/>
+<path d="M354 90 L347.0 102.3 L361.0 102.3 Z" fill="#2f6db5"/>
+<text x="360" y="86" fill="#2f6db5" font-style="italic">vₚ</text>
+<line x1="132.0" y1="156.0" x2="132.0" y2="172.2" stroke="#6a3fa0" stroke-width="2.5"/>
+<path d="M132 182 L139.0 169.8 L125.0 169.8 Z" fill="#6a3fa0"/>
+<text x="110" y="182" fill="#6a3fa0" font-style="italic">v★</text>
+<text x="420" y="40" font-weight="bold">Both bodies:</text>
+<text x="420" y="62" font-size="13">• circle the center of mass</text>
+<text x="420" y="82" font-size="13">• with the same period P</text>
+<text x="420" y="102" font-size="13">• always on opposite sides</text>
+<text x="420" y="140" font-weight="bold">Balance:</text>
+<text x="420" y="164" font-size="15">M★ a★ = Mₚ aₚ</text>
+<text x="420" y="188" font-size="15">M★ v★ = Mₚ vₚ</text>
+<text x="420" y="230" font-size="13">The star's circle is</text>
+<text x="420" y="248" font-size="13">drawn far too big:</text>
+<text x="420" y="266" font-size="13">for Sun + Jupiter it is</text>
+<text x="420" y="284" font-size="13">about the Sun's radius.</text>
+
+</svg>

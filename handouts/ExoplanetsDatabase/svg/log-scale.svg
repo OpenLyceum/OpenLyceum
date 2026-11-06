@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="230" viewBox="0 0 660 230" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Linear and log scales</title>
+<desc>The eight planets' distances from the Sun on a linear scale, where the inner four are crowded together, and on a log scale, where each factor of ten gets the same space and every planet is visible.</desc>
+<defs></defs>
+<rect width="660" height="230" fill="#ffffff"/>
+<text x="60" y="26" font-weight="bold" font-size="13">Linear scale: equal steps add the same amount</text>
+<line x1="60" y1="70" x2="620" y2="70" stroke="#1f2328"/>
+<line x1="60" y1="70" x2="60" y2="76" stroke="#1f2328"/>
+<text x="60" y="92" text-anchor="middle" font-size="12">0</text>
+<line x1="147.5" y1="70" x2="147.5" y2="76" stroke="#1f2328"/>
+<text x="147.5" y="92" text-anchor="middle" font-size="12">5</text>
+<line x1="235" y1="70" x2="235" y2="76" stroke="#1f2328"/>
+<text x="235" y="92" text-anchor="middle" font-size="12">10</text>
+<line x1="322.5" y1="70" x2="322.5" y2="76" stroke="#1f2328"/>
+<text x="322.5" y="92" text-anchor="middle" font-size="12">15</text>
+<line x1="410" y1="70" x2="410" y2="76" stroke="#1f2328"/>
+<text x="410" y="92" text-anchor="middle" font-size="12">20</text>
+<line x1="497.5" y1="70" x2="497.5" y2="76" stroke="#1f2328"/>
+<text x="497.5" y="92" text-anchor="middle" font-size="12">25</text>
+<line x1="585" y1="70" x2="585" y2="76" stroke="#1f2328"/>
+<text x="585" y="92" text-anchor="middle" font-size="12">30</text>
+<circle cx="66.825" cy="70" r="4.5" fill="#2f6db5"/>
+<circle cx="72.6" cy="70" r="4.5" fill="#2f6db5"/>
+<circle cx="77.5" cy="70" r="4.5" fill="#2f6db5"/>
+<circle cx="86.6" cy="70" r="4.5" fill="#2f6db5"/>
+<circle cx="151" cy="70" r="4.5" fill="#2f6db5"/>
+<text x="151" y="58" text-anchor="middle" font-size="11">Jupiter</text>
+<circle cx="228" cy="70" r="4.5" fill="#2f6db5"/>
+<text x="228" y="58" text-anchor="middle" font-size="11">Saturn</text>
+<circle cx="396" cy="70" r="4.5" fill="#2f6db5"/>
+<text x="396" y="58" text-anchor="middle" font-size="11">Uranus</text>
+<circle cx="586.75" cy="70" r="4.5" fill="#2f6db5"/>
+<text x="586.75" y="58" text-anchor="middle" font-size="11">Neptune</text>
+<text x="63.5" y="42" font-size="11" fill="#b8322a">4 planets crowded here</text>
+<text x="60" y="132" font-weight="bold" font-size="13">Log scale: equal steps multiply by 10</text>
+<line x1="60" y1="180" x2="620" y2="180" stroke="#1f2328"/>
+<line x1="60" y1="180" x2="60" y2="188" stroke="#1f2328"/>
+<text x="60" y="204" text-anchor="middle" font-size="12">0.1</text>
+<line x1="246.66666666666666" y1="180" x2="246.66666666666666" y2="188" stroke="#1f2328"/>
+<text x="246.66666666666666" y="204" text-anchor="middle" font-size="12">1</text>
+<line x1="433.3333333333333" y1="180" x2="433.3333333333333" y2="188" stroke="#1f2328"/>
+<text x="433.3333333333333" y="204" text-anchor="middle" font-size="12">10</text>
+<line x1="620" y1="180" x2="620" y2="188" stroke="#1f2328"/>
+<text x="620" y="204" text-anchor="middle" font-size="12">100</text>
+<line x1="116.19226585727651" y1="180" x2="116.19226585727651" y2="184" stroke="#1f2328"/>
+<line x1="149.06263421433698" y1="180" x2="149.06263421433698" y2="184" stroke="#1f2328"/>
+<line x1="190.47440080939015" y1="180" x2="190.47440080939015" y2="184" stroke="#1f2328"/>
+<line x1="302.85893252394317" y1="180" x2="302.85893252394317" y2="184" stroke="#1f2328"/>
+<line x1="335.7293008810036" y1="180" x2="335.7293008810036" y2="184" stroke="#1f2328"/>
+<line x1="377.14106747605683" y1="180" x2="377.14106747605683" y2="184" stroke="#1f2328"/>
+<line x1="489.52559919060985" y1="180" x2="489.52559919060985" y2="184" stroke="#1f2328"/>
+<line x1="522.3959675476704" y1="180" x2="522.3959675476704" y2="184" stroke="#1f2328"/>
+<line x1="563.8077341427236" y1="180" x2="563.8077341427236" y2="184" stroke="#1f2328"/>
+<circle cx="170.33205997827986" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="170.33205997827986" y="168" text-anchor="middle" font-size="11">Mercury</text>
+<circle cx="220.03539933383678" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="220.03539933383678" y="158" text-anchor="middle" font-size="11">Venus</text>
+<circle cx="246.66666666666666" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="246.66666666666666" y="168" text-anchor="middle" font-size="11">Earth</text>
+<circle cx="280.6108030830242" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="280.6108030830242" y="158" text-anchor="middle" font-size="11">Mars</text>
+<circle cx="380.3206241451625" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="380.3206241451625" y="168" text-anchor="middle" font-size="11">Jupiter</text>
+<circle cx="430.02396350071945" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="430.02396350071945" y="158" text-anchor="middle" font-size="11">Saturn</text>
+<circle cx="486.2162293579959" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="486.2162293579959" y="168" text-anchor="middle" font-size="11">Uranus</text>
+<circle cx="522.665745844184" cy="180" r="4.5" fill="#2f6db5"/>
+<text x="522.665745844184" y="158" text-anchor="middle" font-size="11">Neptune</text>
+<text x="620" y="224" text-anchor="end" font-size="12">distance from the Sun (au)</text>
+
+</svg>

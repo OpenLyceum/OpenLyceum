@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="300" viewBox="0 0 660 300" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Only lined-up orbits show transits</title>
+<desc>Side view of an orbit around a star. Only observers inside a thin band, about two star radii wide around the orbital plane, see the planet cross the star. The chance is about the star's radius divided by the orbit size.</desc>
+<defs><radialGradient id="star" cx="0.45" cy="0.4" r="0.65"><stop offset="0" stop-color="#fff6d8"/><stop offset="0.7" stop-color="#f8d77a"/><stop offset="1" stop-color="#e2a92f"/></radialGradient></defs>
+<rect width="660" height="300" fill="#ffffff"/>
+<path d="M200 150 L630.0221816117908 56.828527317445335 L630.0221816117908 243.17147268255468 Z" fill="#1b7f4f" fill-opacity="0.13"/>
+<path d="M200 150 L-230.02218161179076 56.828527317445335 L-230.02218161179076 243.17147268255468 Z" fill="#1b7f4f" fill-opacity="0.13"/>
+<ellipse cx="200" cy="150" rx="120" ry="120" fill="none" stroke="#2f6db5" stroke-dasharray="5 4"/><circle cx="200" cy="150" r="22" fill="url(#star)" stroke="#9a6a00" stroke-width="1.2"/>
+<circle cx="320" cy="150" r="6" fill="#2b2b2b"/>
+<text x="330" y="140" font-size="12">planet</text>
+<line x1="200.0" y1="160.8" x2="200.0" y2="259.2" stroke="#1f2328" stroke-width="1"/>
+<path d="M200 266 L204.6 257.5 L195.4 257.5 Z" fill="#1f2328"/>
+<path d="M200 154 L195.4 162.5 L204.6 162.5 Z" fill="#1f2328"/>
+<text x="206" y="228" font-style="italic">a</text>
+<line x1="184.8" y1="118.0" x2="215.2" y2="118.0" stroke="#1f2328" stroke-width="1"/>
+<path d="M222 118 L213.5 113.4 L213.5 122.6 Z" fill="#1f2328"/>
+<path d="M178 118 L186.5 122.6 L186.5 113.4 Z" fill="#1f2328"/>
+<text x="200" y="112" text-anchor="middle" font-size="12">2 R★</text>
+<text x="200" y="22" text-anchor="middle" font-weight="bold" font-size="13">Side view of the orbit (not to scale)</text>
+<text x="560" y="155" font-size="22" text-anchor="middle">👁</text>
+<text x="560" y="180" text-anchor="middle" font-size="12" fill="#1b7f4f">A: sees transits</text>
+<text x="560" y="52" font-size="22" text-anchor="middle">👁</text>
+<text x="560" y="76" text-anchor="middle" font-size="12" fill="#b8322a">B: planet passes</text>
+<text x="560" y="92" text-anchor="middle" font-size="12" fill="#b8322a">above the star</text>
+<text x="430" y="250" font-size="13" text-anchor="middle">Only observers inside the green band see the planet</text>
+<text x="430" y="268" font-size="13" text-anchor="middle">cross the star. Its width is about 2 R★, so the chance</text>
+<text x="430" y="286" font-size="13" text-anchor="middle">that a random orbit lines up is about R★ ÷ a.</text>
+
+</svg>

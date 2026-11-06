@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="290" viewBox="0 0 660 290" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Orbit tilt and the measured wobble</title>
+<desc>Three side views with Earth to the right. Edge-on, the star's whole velocity points along the line of sight. Tilted, only the part v sin i does. Face-on, none does, so there is no Doppler signal.</desc>
+<defs></defs>
+<rect width="660" height="290" fill="#ffffff"/>
+<text x="110" y="30" text-anchor="middle" font-weight="bold">Edge-on, i = 90°</text>
+<g transform="rotate(0 110 130)"><ellipse cx="110" cy="130" rx="55" ry="8" fill="#eef3fa" stroke="#2f6db5" stroke-dasharray="5 4"/></g><circle cx="110" cy="130" r="9" fill="#f6c445" stroke="#9a6a00"/>
+<line x1="110.0" y1="130.0" x2="158.2" y2="130.0" stroke="#6a3fa0" stroke-width="2.5"/>
+<path d="M168 130 L155.8 123.0 L155.8 137.0 Z" fill="#6a3fa0"/>
+<line x1="168" y1="130" x2="168" y2="190" stroke="#57606a" stroke-dasharray="3 3"/>
+<line x1="110.0" y1="190.0" x2="157.2" y2="190.0" stroke="#b8322a" stroke-width="3"/>
+<path d="M168 190 L154.5 182.2 L154.5 197.8 Z" fill="#b8322a"/>
+<text x="130" y="210" font-size="11" text-anchor="middle" fill="#b8322a">part along the line of sight</text>
+<text x="110" y="236" text-anchor="middle" font-size="13">K = v★ (full signal)</text>
+<text x="330" y="30" text-anchor="middle" font-weight="bold">Tilted, i = 40°</text>
+<g transform="rotate(-50 330 130)"><ellipse cx="330" cy="130" rx="55" ry="8" fill="#eef3fa" stroke="#2f6db5" stroke-dasharray="5 4"/></g><circle cx="330" cy="130" r="9" fill="#f6c445" stroke="#9a6a00"/>
+<line x1="330.0" y1="130.0" x2="361.0" y2="93.1" stroke="#6a3fa0" stroke-width="2.5"/>
+<path d="M367.28168136181927 85.56942229909927 L354.0 90.5 L364.8 99.5 Z" fill="#6a3fa0"/>
+<line x1="367.28168136181927" y1="85.56942229909927" x2="367.28168136181927" y2="190" stroke="#57606a" stroke-dasharray="3 3"/>
+<text x="371.28168136181927" y="83.56942229909927" fill="#6a3fa0" font-style="italic" font-size="13">v★</text>
+<line x1="330.0" y1="190.0" x2="356.5" y2="190.0" stroke="#b8322a" stroke-width="3"/>
+<path d="M367.28168136181927 190 L353.8 182.2 L353.8 197.8 Z" fill="#b8322a"/>
+<text x="350" y="210" font-size="11" text-anchor="middle" fill="#b8322a">part along the line of sight</text>
+<text x="330" y="236" text-anchor="middle" font-size="13">K = v★ sin i</text>
+<text x="550" y="30" text-anchor="middle" font-weight="bold">Face-on, i = 0°</text>
+<g transform="rotate(-90 550 130)"><ellipse cx="550" cy="130" rx="55" ry="8" fill="#eef3fa" stroke="#2f6db5" stroke-dasharray="5 4"/></g><circle cx="550" cy="130" r="9" fill="#f6c445" stroke="#9a6a00"/>
+<line x1="550.0" y1="130.0" x2="550.0" y2="81.8" stroke="#6a3fa0" stroke-width="2.5"/>
+<path d="M550 72 L543.0 84.3 L557.0 84.3 Z" fill="#6a3fa0"/>
+<text x="556" y="76" fill="#6a3fa0" font-style="italic" font-size="13">v★</text>
+<text x="550" y="210" font-size="11" text-anchor="middle" fill="#b8322a">nothing along the line of sight</text>
+<text x="550" y="236" text-anchor="middle" font-size="13">K = 0: no signal</text>
+<line x1="30.0" y1="262.0" x2="631.2" y2="262.0" stroke="#1b7f4f" stroke-width="2"/>
+<path d="M640 262 L629.0 255.8 L629.0 268.2 Z" fill="#1b7f4f"/>
+<text x="636" y="282" fill="#1b7f4f" text-anchor="end" font-size="13">line of sight: to Earth</text>
+
+</svg>

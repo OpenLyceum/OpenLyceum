@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="230" viewBox="0 0 620 230" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Redshifted absorption lines</title>
+<desc>A star's absorption lines compared with the same lines measured in the lab. Moving away, every line shifts toward longer wavelength by the fraction v/c.</desc>
+<defs><linearGradient id="spec" x1="0" x2="1"><stop offset="0" stop-color="#7a3fb0"/><stop offset="0.12" stop-color="#3b4fd8"/><stop offset="0.3" stop-color="#16a6e0"/><stop offset="0.42" stop-color="#2fc46b"/><stop offset="0.55" stop-color="#c8d62b"/><stop offset="0.65" stop-color="#f2b01e"/><stop offset="0.8" stop-color="#ef6a1f"/><stop offset="1" stop-color="#c81e1e"/></linearGradient></defs>
+<rect width="620" height="230" fill="#ffffff"/>
+<text x="60" y="62" text-anchor="end" font-weight="bold">Lab</text>
+<rect x="70" y="40" width="520" height="34" fill="url(#spec)" stroke="#1f2328"/>
+<rect x="127.02000000000001" y="40" width="4" height="34" fill="#111"/>
+<rect x="217.29199999999997" y="40" width="4" height="34" fill="#111"/>
+<rect x="395.6" y="40" width="4" height="34" fill="#111"/>
+<rect x="512.2186666666666" y="40" width="4" height="34" fill="#111"/>
+<text x="60" y="122" text-anchor="end" font-weight="bold">Star</text>
+<rect x="70" y="100" width="520" height="34" fill="url(#spec)" stroke="#1f2328"/>
+<rect x="142.06706666666668" y="100" width="4" height="34" fill="#111"/>
+<rect x="234.14450666666667" y="100" width="4" height="34" fill="#111"/>
+<rect x="416.0186666666666" y="100" width="4" height="34" fill="#111"/>
+<rect x="534.9697066666665" y="100" width="4" height="34" fill="#111"/>
+<line x1="129.02" y1="74" x2="129.02" y2="100" stroke="#1f2328" stroke-dasharray="3 3"/>
+<line x1="129.0" y1="152.0" x2="135.3" y2="152.0" stroke="#b8322a" stroke-width="2"/>
+<path d="M144.06706666666668 152 L133.1 145.8 L133.1 158.2 Z" fill="#b8322a"/>
+<line x1="219.29199999999997" y1="74" x2="219.29199999999997" y2="100" stroke="#1f2328" stroke-dasharray="3 3"/>
+<line x1="219.3" y1="152.0" x2="227.3" y2="152.0" stroke="#b8322a" stroke-width="2"/>
+<path d="M236.14450666666667 152 L225.1 145.8 L225.1 158.2 Z" fill="#b8322a"/>
+<line x1="397.6" y1="74" x2="397.6" y2="100" stroke="#1f2328" stroke-dasharray="3 3"/>
+<line x1="397.6" y1="152.0" x2="409.2" y2="152.0" stroke="#b8322a" stroke-width="2"/>
+<path d="M418.0186666666666 152 L407.0 145.8 L407.0 158.2 Z" fill="#b8322a"/>
+<line x1="514.2186666666666" y1="74" x2="514.2186666666666" y2="100" stroke="#1f2328" stroke-dasharray="3 3"/>
+<line x1="514.2" y1="152.0" x2="528.2" y2="152.0" stroke="#b8322a" stroke-width="2"/>
+<path d="M536.9697066666665 152 L526.0 145.8 L526.0 158.2 Z" fill="#b8322a"/>
+<text x="525.5941866666667" y="172" fill="#b8322a" text-anchor="middle" font-style="italic">Δλ</text>
+<text x="70" y="196" font-size="12" text-anchor="middle" fill="#57606a">400</text>
+<text x="156.66666666666666" y="196" font-size="12" text-anchor="middle" fill="#57606a">450</text>
+<text x="243.33333333333331" y="196" font-size="12" text-anchor="middle" fill="#57606a">500</text>
+<text x="330" y="196" font-size="12" text-anchor="middle" fill="#57606a">550</text>
+<text x="416.66666666666663" y="196" font-size="12" text-anchor="middle" fill="#57606a">600</text>
+<text x="503.33333333333337" y="196" font-size="12" text-anchor="middle" fill="#57606a">650</text>
+<text x="590" y="196" font-size="12" text-anchor="middle" fill="#57606a">700</text>
+<text x="330" y="216" font-size="13" text-anchor="middle">Wavelength (nm)   →  longer, redder</text>
+<text x="70" y="26" font-size="13">Every line moves by the same fraction of its wavelength: Δλ / λ = vᵣ / c   (exaggerated)</text>
+
+</svg>

@@ -1,0 +1,23 @@
+{ "simDir": "../../StellarWobble", "base": "http://localhost:5191/", "outDir": "../StellarWobble/img",
+  "shots": [
+   {"name":"doppler","query":"screens=1&colorProfile=projector"},
+   {"name":"wobble","query":"screens=2&colorProfile=projector","settle":4000},
+   {"name":"viewing-angle","query":"screens=3&colorProfile=projector","settle":3000},
+   {"name":"observatory","query":"screens=4&colorProfile=projector","steps":[
+     {"role":"button","name":"Mystery star","keys":["Enter","ArrowDown","Enter"]},
+     {"role":"button","name":"Observe 10 nights","keys":["Enter","Enter","Enter"]}]},
+   {"name":"key-periodogram","query":"screens=4&colorProfile=projector","steps":[
+     {"role":"button","name":"Mystery star","keys":["Enter","ArrowDown","Enter"]},
+     {"role":"button","name":"Observe 10 nights","keys":["Enter","Enter","Enter"]},
+     {"role":"checkbox","name":"Periodogram","keys":["Space"]},
+     {"role":"button","name":"Use the highest","keys":["Enter"]}]},
+   {"name":"key-fold","query":"screens=4&colorProfile=projector","steps":[
+     {"role":"button","name":"Mystery star","keys":["Enter","ArrowDown","Enter"]},
+     {"role":"button","name":"Observe 10 nights","keys":["Enter","Enter","Enter"]},
+     {"role":"checkbox","name":"Periodogram","keys":["Space"]},
+     {"role":"button","name":"Use the highest","keys":["Enter"]},
+     {"role":"checkbox","name":"Periodogram","keys":["Space"]},
+     {"role":"slider","name":"Model amplitude","keys":[["ArrowUp",2],["Shift+ArrowUp",34]]},
+     {"role":"checkbox","name":"Show your model","keys":["Space"]},
+     {"role":"checkbox","name":"Fold data","keys":["Space"]}]}
+  ]}

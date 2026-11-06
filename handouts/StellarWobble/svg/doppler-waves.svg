@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="330" viewBox="0 0 700 330" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>Doppler effect from a moving star</title>
+<desc>Wavefronts from a star moving to the right: crests are closer together ahead of the star (blueshift) and farther apart behind it (redshift).</desc>
+<defs></defs>
+<rect width="700" height="330" fill="#ffffff"/>
+<circle cx="359.8" cy="165" r="38" fill="none" stroke="#a07b1e" stroke-width="1.6"/>
+<circle cx="344.6" cy="165" r="76" fill="none" stroke="#a07b1e" stroke-width="1.6"/>
+<circle cx="329.4" cy="165" r="114" fill="none" stroke="#a07b1e" stroke-width="1.6"/>
+<circle cx="314.2" cy="165" r="152" fill="none" stroke="#a07b1e" stroke-width="1.6"/>
+<circle cx="375" cy="165" r="13" fill="#f6c445" stroke="#9a6a00" stroke-width="1.5"/>
+<line x1="391.0" y1="165.0" x2="434.2" y2="165.0" stroke="#6a3fa0" stroke-width="3"/>
+<path d="M445 165 L431.5 157.2 L431.5 172.8 Z" fill="#6a3fa0"/>
+<text x="419" y="195" fill="#6a3fa0" font-size="13" text-anchor="middle">star's motion</text>
+<text x="350" y="14" font-size="12" fill="#57606a" text-anchor="middle">Not to scale: the star's speed is hugely exaggerated</text>
+<text x="625" y="140" fill="#1f5fa8" font-weight="bold" text-anchor="middle">Ahead:</text>
+<text x="625" y="160" fill="#1f5fa8" text-anchor="middle" font-size="13">crests bunched up</text>
+<text x="625" y="178" fill="#1f5fa8" text-anchor="middle" font-size="13">shorter wavelength</text>
+<text x="625" y="196" fill="#1f5fa8" text-anchor="middle" font-size="13">→ blueshift</text>
+<text x="70" y="140" fill="#b8322a" font-weight="bold" text-anchor="middle">Behind:</text>
+<text x="70" y="160" fill="#b8322a" text-anchor="middle" font-size="13">crests spread out</text>
+<text x="70" y="178" fill="#b8322a" text-anchor="middle" font-size="13">longer wavelength</text>
+<text x="70" y="196" fill="#b8322a" text-anchor="middle" font-size="13">→ redshift</text>
+<line x1="443.4" y1="250" x2="466.2" y2="250" stroke="#1f5fa8" stroke-width="2"/>
+<line x1="215.4" y1="250" x2="162.20000000000002" y2="250" stroke="#b8322a" stroke-width="2"/>
+<text x="454.8" y="268" fill="#1f5fa8" font-size="12" text-anchor="middle">λ short</text>
+<text x="188.8" y="268" fill="#b8322a" font-size="12" text-anchor="middle">λ long</text>
+<text x="350" y="318" font-size="13" fill="#1f2328" text-anchor="middle">Each circle is a crest sent out when the star was at that circle's center.</text>
+
+</svg>

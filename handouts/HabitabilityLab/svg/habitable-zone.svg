@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="270" viewBox="0 0 660 270" role="img" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#1f2328">
+<title>The Sun's habitable zone</title>
+<desc>Distances from the Sun on a log scale. The conservative habitable zone runs from about 0.95 AU (runaway greenhouse) to 1.68 AU (maximum greenhouse), with thin optimistic bands on either side. Venus lies on the hot side, Earth and Mars inside.</desc>
+<defs></defs>
+<rect width="660" height="270" fill="#ffffff"/>
+<rect x="40.497831237590916" y="80" width="277.7281383144238" height="100" fill="#f6d5cf"/>
+<rect x="318.2259695520147" y="80" width="49.56128030106868" height="100" fill="#cfe8cf"/>
+<rect x="367.7872498530834" y="80" width="119.44556964775035" height="100" fill="#6cbf6c"/>
+<rect x="487.2328195008337" y="80" width="10.954259240706108" height="100" fill="#cfe8cf"/>
+<rect x="498.18707874153984" y="80" width="121.66167785735536" height="100" fill="#d6e4f4"/>
+<circle cx="30" cy="130" r="22" fill="#f6c445" stroke="#9a6a00"/>
+<text x="179.3619003948028" y="104" text-anchor="middle" font-weight="bold" fill="#b8322a">Too hot</text>
+<text x="427.5100346769585" y="104" text-anchor="middle" font-weight="bold" fill="#14532d">Conservative zone</text>
+<text x="559.0179176702175" y="104" text-anchor="middle" font-weight="bold" fill="#1f5fa8">Too cold</text>
+<circle cx="179.0602997591405" cy="140" r="6" fill="#2f6db5" stroke="#fff"/>
+<text x="179.0602997591405" y="164" text-anchor="middle" font-size="12">Mercury</text>
+<circle cx="310.2501770256899" cy="140" r="6" fill="#2f6db5" stroke="#fff"/>
+<text x="310.2501770256899" y="164" text-anchor="middle" font-size="12">Venus</text>
+<circle cx="378.33333333333337" cy="140" r="6" fill="#2f6db5" stroke="#fff"/>
+<text x="378.33333333333337" y="164" text-anchor="middle" font-size="12">Earth</text>
+<circle cx="466.77606738506444" cy="140" r="6" fill="#2f6db5" stroke="#fff"/>
+<text x="466.77606738506444" y="164" text-anchor="middle" font-size="12">Mars</text>
+<line x1="367.7872498530834" y1="182" x2="367.7872498530834" y2="208" stroke="#1f2328"/>
+<text x="367.7872498530834" y="224" text-anchor="middle" font-size="12">inner edge:</text>
+<text x="367.7872498530834" y="240" text-anchor="middle" font-size="12">runaway greenhouse</text>
+<line x1="487.2328195008337" y1="182" x2="487.2328195008337" y2="208" stroke="#1f2328"/>
+<text x="487.2328195008337" y="224" text-anchor="middle" font-size="12">outer edge:</text>
+<text x="487.2328195008337" y="240" text-anchor="middle" font-size="12">maximum greenhouse</text>
+<text x="318.2259695520147" y="72" text-anchor="middle" font-size="11" fill="#57606a">optimistic edges ↓</text>
+<text x="498.18707874153984" y="72" text-anchor="middle" font-size="11" fill="#57606a">↓</text>
+<text x="330" y="20" text-anchor="middle" font-weight="bold">The Sun's habitable zone today (distance from the Sun, log scale)</text>
+
+</svg>

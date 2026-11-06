@@ -1,0 +1,18 @@
+{ "simDir": "../../ExoplanetsDatabase", "base": "http://localhost:5193/", "outDir": "../ExoplanetsDatabase/img",
+  "shots": [
+   {"name":"counts","query":"screens=1&colorProfile=projector","settle":4000},
+   {"name":"explore","query":"screens=2&colorProfile=projector","settle":4000,"steps":[{"click":[230,80]}]},
+   {"name":"gallery-mass-orbit","query":"screens=3&colorProfile=projector","settle":4000},
+   {"name":"builder","query":"screens=4&colorProfile=projector","settle":4000},
+   {"name":"key-gallery-radius-period","query":"screens=3&colorProfile=projector","settle":4000,"steps":[{"role":"radio","name":"Radius vs orbital period","keys":["Space"],"after":800}]},
+   {"name":"key-gallery-kepler","query":"screens=3&colorProfile=projector","settle":4000,"steps":[{"role":"radio","name":"Kepler's third law","keys":["Space"],"after":800}]},
+   {"name":"key-builder-ecc","query":"screens=4&colorProfile=projector","settle":4000,"steps":[
+     {"role":"button","name":"Horizontal axis","keys":["Enter","ArrowUp","Enter"],"after":600},
+     {"role":"button","name":"Vertical axis","keys":["Enter","ArrowUp","ArrowUp","Enter"],"after":600},
+     {"role":"checkbox","name":"Log scale","nth":1,"keys":["Space"],"after":800}]},
+   {"name":"key-builder-distance","query":"screens=4&colorProfile=projector","settle":4000,"steps":[
+     {"role":"button","name":"Horizontal axis","keys":["Enter",["ArrowDown",11],"Enter"],"after":600},
+     {"role":"button","name":"Vertical axis","keys":["Enter",["ArrowDown",6],"Enter"],"after":600},
+     {"role":"checkbox","name":"Log scale","nth":0,"keys":["Space"],"after":400},
+     {"role":"radio","name":"Telescope","keys":["Space"],"after":800}]}
+  ]}
