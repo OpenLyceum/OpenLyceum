@@ -1,7 +1,7 @@
 # OpenLyceum
 
 Thin **workspace bootstrapper** for the [OpenLyceum](https://github.com/OpenLyceum)
-organization. This repo tracks only a README and a `bootstrap.sh` script; it has **no
+organization. This repo tracks the bootstrap files, review log, and [simulation handouts](handouts/README.md); it has **no
 submodules**. Running the script clones the whole org — every simulation, the shared
 infrastructure, and the hardware/tooling libraries — side by side in one directory, which is
 exactly the layout the Baton scripts expect.

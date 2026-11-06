@@ -1509,3 +1509,80 @@ Compliance passed. Lint, typecheck, tests (364), and the production build passed
 
 Addressed 2026-09-30: numerics, globe rotation drag, and the deep-time canvas.
 
+## Scientific correctness review — 2026-11-06
+
+Scope: the five most recently catalogued simulations. Baton catalog history records
+HabitabilityLab and ExoplanetsDatabase on November 6, TransitHunter and StellarWobble on
+November 5, and ElectronConfiguration on November 2. Only four additions fall on November 5–6;
+ElectronConfiguration was included as the fifth under the stated scope assumption.
+
+Six distinct correctness findings were identified. All were corrected in the follow-up below.
+
+| Priority | Finding | Affected simulations |
+|---|---|---|
+| P1 | Stellar and planetary mass factors are swapped in the tidal-lock calculation; a representative time is too long by about 100,000 times | HabitabilityLab |
+| P1 | Archive upper mass limits are treated as measured central values, yielding misleading densities and definite escape speeds | ExoplanetsDatabase, HabitabilityLab |
+| P2 | Pure-iron guide extrapolates a rocky-planet fit outside its composition range; radius error reaches 19.3% against the author's table | ExoplanetsDatabase, TransitHunter |
+| P2 | Coarse light-curve bins reduce noise without averaging brightness; a reproduced discrepancy is 3,342 ppm | TransitHunter |
+| P2 | Switching stellar mass during late zoom resets age outside the displayed timeline | HabitabilityLab |
+| P2 | Inverted bounds filter no planets but display an ordered archive interval | ExoplanetsDatabase |
+
+No actionable correctness defect was confirmed in the reviewed StellarWobble or
+ElectronConfiguration paths. Per-repository evidence, recommendations, and limitations:
+
+- [HabitabilityLab](HabitabilityLab/doc/correctness-review-2026-11-06.md)
+- [ExoplanetsDatabase](ExoplanetsDatabase/doc/correctness-review-2026-11-06.md)
+- [TransitHunter](TransitHunter/doc/correctness-review-2026-11-06.md)
+- [StellarWobble](StellarWobble/doc/correctness-review-2026-11-06.md)
+- [ElectronConfiguration](ElectronConfiguration/doc/correctness-review-2026-11-06.md)
+
+Node v26.13.0. All five passed lint, all type checks, production builds, existing unit tests
+(495 total), and pointer/keyboard fuzz (10 seconds per mode). All 18 screens across the four
+astronomy apps initialized and reset at desktop/phone sizes with randomized listener order.
+ElectronConfiguration's 18 existing browser tests passed, including all screens in three locales.
+Eight independent diagnostic assertions failed and reproduced the six findings; their source is
+preserved in the relevant reports, and temporary test files were removed.
+
+Local compliance passed with warnings; remote security checks were skipped (`gh` unavailable).
+Template drift was limited to Vitest declarations in HabitabilityLab, ExoplanetsDatabase,
+and TransitHunter (`^5.1.0` versus template `^5.0.5`). NASA TAP queries timed out; the mass-limit
+finding was verified against the bundled values and the original Kepler-62 paper instead.
+
+
+### Correctness remediation — 2026-11-06
+
+All six findings are corrected in HabitabilityLab, ExoplanetsDatabase and TransitHunter, with
+permanent regressions and regenerated data. The tidal fix uses the full Gladman equation,
+including the Love number; its red-dwarf preset now locks at 13.7 Myr. The snapshot gained
+verified archive limit flags without changing existing values, and the shoreline now contains
+611 measured planets. Table/card inequalities, density bounds, filtered/plot samples, range
+normalization, numerical iron curves and coarse-bin brightness averaging are consistent.
+
+The corresponding local handouts and instructor keys now explain limits and corrected counts,
+locking ages and timeline resolution, and binning. Relevant screenshots and Word exports were
+rebuilt. The three Vitest declarations were also aligned with the template (`^5.0.5`), preserving
+installed versions already allowed by that range. At the end of local remediation, changes had
+not yet been committed, pushed or deployed.
+
+Validation of the corrected repositories: 210 unit tests passed (48 + 44 + 118), lint,
+all type checks, builds, six pointer/keyboard smoke tests, and targeted production-browser
+checks across 14 screens at desktop/phone sizes. The displayed upper bounds, 3,163 measured
+masses, normalized filters, red-dwarf locking readout and averaged brightness were checked in
+Chromium. All six Word exports passed ZIP/XML, content and freshness checks. Local compliance
+and template-drift checks passed; remote security probes remain outside this local correction.
+
+### Publication — 2026-11-06
+
+The completed corrections and review reports were committed on `main` in their owning repos:
+
+| Repository | Commit |
+|---|---|
+| HabitabilityLab | `1274aba` |
+| ExoplanetsDatabase | `7ea5da8` |
+| TransitHunter | `664701f` |
+| StellarWobble | `77a9fd4` |
+| ElectronConfiguration | `86ca625` |
+
+At the user's request to commit everything, `handouts/` is now tracked in this workspace,
+including Markdown, Word exports, figures, and regeneration tools. Build caches and nested
+`node_modules/` remain ignored. Member repositories remain independent and ignored here.
