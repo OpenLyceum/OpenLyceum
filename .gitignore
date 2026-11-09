@@ -16,6 +16,3 @@
 !/openlyceum-logo.svg
 !/openlyceum-logo-geometric.svg
 !/review-log.md
-!/handouts/
-/handouts/**/_build/
-/handouts/**/node_modules/
