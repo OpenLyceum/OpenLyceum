@@ -1,6 +1,6 @@
 # AGENTS.md — OpenLyceum superproject
 
-This repo is a **thin workspace bootstrapper**, not an application. It tracks only its own root files (`README.md`, `bootstrap.sh`, `.gitignore`, `.gitattributes`, `.claude/`, the logos, `review-log.md`, and this file). Every member repo (`Baton/`, `.github/`, the sims, `Almanach/`, …) is an **independent git repo** cloned in by `bootstrap.sh` and gitignored here, so `git status` in the superproject stays clean no matter what state they're in.
+This repo is a **thin workspace bootstrapper**, not an application. It tracks its own root files (`README.md`, `bootstrap.sh`, `.gitignore`, `.gitattributes`, `.claude/`, the logos, `review-log.md`, and this file). The teaching materials in `handouts/` are local only and gitignored. Every member repo (`Baton/`, `.github/`, the sims, `Almanach/`, …) is an **independent git repo** cloned in by `bootstrap.sh` and gitignored here, so `git status` in the superproject stays clean no matter what state they're in.
 
 ## Before doing anything
 
@@ -47,4 +47,4 @@ Authoritative docs are **not** in this superproject — they live in the cloned 
 
 ## Tracking new files in this superproject
 
-`.gitignore` ignores everything (`/*`) then re-includes an allowlist (the root files listed at the top, plus `CONVENTIONS.md` / `ACCESSIBILITY.md` placeholders). **To commit a new root-level file here, add a `!/your-file` line to `.gitignore`** — otherwise it stays ignored. Member-repo contents need no entry; the top-level `/*` already covers them (so stray artifacts like `ACPhasor.zip` are ignored too).
+`.gitignore` ignores everything (`/*`) then re-includes an allowlist (the root files listed at the top, plus `CONVENTIONS.md` / `ACCESSIBILITY.md` placeholders). **To commit a new root-level file here, add a `!/your-file` line to `.gitignore`** — otherwise it stays ignored. `handouts/` is deliberately left out of the allowlist: handouts and answer keys stay on the local machine and are never committed. Member-repo contents need no entry; the top-level `/*` already covers them (so stray artifacts like `ACPhasor.zip` are ignored too).
