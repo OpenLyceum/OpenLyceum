@@ -1586,3 +1586,36 @@ The completed corrections and review reports were committed on `main` in their o
 At the user's request to commit everything, `handouts/` is now tracked in this workspace,
 including Markdown, Word exports, figures, and regeneration tools. Build caches and nested
 `node_modules/` remain ignored. Member repositories remain independent and ignored here.
+
+## Fleet fuzz review — 2026-11-15
+
+Scope: all 74 simulations returned by `Baton/scripts/parse-repos.sh names --simulation`,
+using their local, clean `main` checkouts. Each ran the standard `npm run test:fuzz`:
+pointer (`?fuzz&ea`) and keyboard (`?fuzzBoard&ea`), 30 seconds per mode, seed `20261115`,
+Node v26.13.0, headless Playwright Chromium. Four simulations ran concurrently with distinct
+`FUZZ_PORT` values (5300–5373), `CI=1`, and the template's existing WebGPU launch flags.
+
+The initial batch passed 73 simulations (147 of 148 individual tests). CapacitorLab's
+pointer test passed, but its keyboard test exceeded the existing 150-second timeout without
+reporting an assertion or console error. Its retained trace showed slow browser evaluation
+calls under concurrent load. Replaying the same seed in isolation for **60 seconds per mode**
+passed both tests in 175.9 seconds overall. The timeout did not reproduce; the evidence is
+consistent with resource contention. No timeout or assertion was weakened, and no simulation
+source change was warranted by this run. All 74 simulation working trees remained clean.
+
+SceneryStackTemplate also passed both modes in isolation at 30 seconds per mode with the
+same seed (67.3 seconds overall). Final outcome: all 74 simulations plus the template have
+passing pointer and keyboard results; no reproducible application defect was found.
+
+Reproduce the longer isolated check inside CapacitorLab with Node 26:
+
+```sh
+CI=1 FUZZ_SEED=20261115 FUZZ_PORT=5390 npm run test:fuzz -- 60
+```
+
+Local evidence is under `/tmp/fleet-fuzz-20261115/`: per-repository logs and JSON results,
+`baseline.json` with tested commit IDs, and the original CapacitorLab failure trace/video
+under `artifacts/CapacitorLab/`. These temporary artifacts are outside version control.
+This is a single-seed browser fuzz smoke review; it does not establish exhaustive screen,
+physics, accessibility, or physical-sensor coverage. Unit tests, lint, type checks, and builds
+were not rerun because no application source or test harness changed.
