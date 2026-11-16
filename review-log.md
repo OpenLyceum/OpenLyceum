@@ -1753,3 +1753,39 @@ Opaque doubled/illegal names above are cleared in all twenty Constants modules. 
 `fix(constants)` commit passed `lint` and `check` (unit tests rerun where exercised by the
 agents). Not pushed.
 
+
+## Oldest ten simulations — functional code review — 2026-11-16
+
+Selected catalogued simulations by their earliest root commit's author timestamp (source-history age, not GitHub creation date). All ten started with clean working trees. Reports record the exact reviewed commits and reproducible findings. Application source is unchanged; findings remain open.
+
+| Oldest first | First commit date | Existing tests | Review |
+|---|---|---:|---|
+| DopplerEffect | 2025-03-26 | 47 | [Report](DopplerEffect/doc/code-review-2026-11-16.md) |
+| OscillationsAndChaos | 2025-10-22 | 66 | [Report](OscillationsAndChaos/doc/code-review-2026-11-16.md) |
+| Resonance | 2025-11-02 | 469 | [Report](Resonance/doc/code-review-2026-11-16.md) |
+| QuantumPotential | 2025-11-11 | 110 | [Report](QuantumPotential/doc/code-review-2026-11-16.md) |
+| TrackLab | 2026-02-17 | 81 | [Report](TrackLab/doc/code-review-2026-11-16.md) |
+| OpticsLab | 2026-02-24 | 459 | [Report](OpticsLab/doc/code-review-2026-11-16.md) |
+| LadyBug | 2026-05-24 | 17 | [Report](LadyBug/doc/code-review-2026-11-16.md) |
+| TheRamp | 2026-05-24 | 23 | [Report](TheRamp/doc/code-review-2026-11-16.md) |
+| MazeGame | 2026-05-25 | 18 | [Report](MazeGame/doc/code-review-2026-11-16.md) |
+| ElectricFieldOfDreams | 2026-05-26 | 15 | [Report](ElectricFieldOfDreams/doc/code-review-2026-11-16.md) |
+
+Six confirmed functional findings:
+
+| Priority | Simulation | Finding |
+|---|---|---|
+| P1 | QuantumPotential | All four views step the model again after Joist, doubling automatic time/phase evolution |
+| P2 | DopplerEffect | Rewind restores old velocities without the old sound speed, violating the subsonic constraint |
+| P2 | TrackLab | Uneven sample spacing produces derivatives assigned to the wrong time; x=t² gives 3 instead of 2 m/s at t=1 |
+| P2 | Resonance | Chladni's paused Step callback advances no particles |
+| P2 | TheRamp | Recording from the past leaves abandoned future samples in force/energy/work graphs |
+| P2 | LadyBug | Rewind displays the first advanced state at time zero because the initial snapshot is missing |
+
+No additional actionable functional defect was confirmed in the reviewed OscillationsAndChaos, OpticsLab, MazeGame or ElectricFieldOfDreams paths. An unused Resonance bandwidth property also has a zero-damping discrepancy, documented separately in its report.
+
+Under Node v26.13.0, all ten pass lint, app/scripts/test type checks, production builds, architecture checks and existing unit suites: **1,305 tests total**. QuantumPotential initially exceeded a 2 s performance assertion under concurrency; its full unchanged suite passed in isolation. TrackLab's baseline was rerun after a temporary diagnostic-file discovery/removal race and passed. Six diagnostic assertions reproduced the functional findings; their sources are retained in the owning reports, and temporary test files were removed.
+
+Local compliance passes with warnings; remote GitHub security settings could not be checked. All ten have pre-existing template drift: all declare Biome ^2.6.5 versus template ^2.6.6; seven also differ in biome.json; OscillationsAndChaos/TrackLab/Resonance have dependency-order drift; Resonance declares Vitest ^5.0.5 versus template ^5.1.0. Full output is preserved in each report.
+
+This was a targeted review of model, control, recording, numerical and lifecycle paths, with broad automated validation. No new browser fuzz, live camera/video, heap profiling, manual screen-reader audit or educator sign-off was performed. Prior November 15 fleet fuzz remains separate evidence. Local logs, baseline commits, diagnostic sources and output: `/tmp/oldest-review/`.
