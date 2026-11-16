@@ -1756,7 +1756,7 @@ agents). Not pushed.
 
 ## Oldest ten simulations — functional code review — 2026-11-16
 
-Selected catalogued simulations by their earliest root commit's author timestamp (source-history age, not GitHub creation date). All ten started with clean working trees. Reports record the exact reviewed commits and reproducible findings. Application source is unchanged; findings remain open.
+Selected catalogued simulations by their earliest root commit's author timestamp (source-history age, not GitHub creation date). All ten started with clean working trees. Reports record the exact reviewed commits and reproducible findings. The findings below describe the review baseline; the remediation entry records their resolution.
 
 | Oldest first | First commit date | Existing tests | Review |
 |---|---|---:|---|
@@ -1789,3 +1789,51 @@ Under Node v26.13.0, all ten pass lint, app/scripts/test type checks, production
 Local compliance passes with warnings; remote GitHub security settings could not be checked. All ten have pre-existing template drift: all declare Biome ^2.6.5 versus template ^2.6.6; seven also differ in biome.json; OscillationsAndChaos/TrackLab/Resonance have dependency-order drift; Resonance declares Vitest ^5.0.5 versus template ^5.1.0. Full output is preserved in each report.
 
 This was a targeted review of model, control, recording, numerical and lifecycle paths, with broad automated validation. No new browser fuzz, live camera/video, heap profiling, manual screen-reader audit or educator sign-off was performed. Prior November 15 fleet fuzz remains separate evidence. Local logs, baseline commits, diagnostic sources and output: `/tmp/oldest-review/`.
+
+
+### Oldest-ten remediation and commits — 2026-11-16
+
+All six functional findings are corrected, along with Resonance’s dormant zero-damping
+bandwidth calculation and all reported template drift. Permanent regression coverage now
+checks the four quantum screen callbacks, Doppler parameter/emission replay, nonuniform
+track derivatives, Chladni paused stepping, LadyBug initial snapshots and TheRamp graph
+branching. TheRamp’s new event includes SceneryStack runtime parameter metadata, verified
+by an assertion-enabled unit test and a repeated browser fuzz run after the initial smoke
+run exposed the missing metadata.
+
+Biome declarations, schemas and locked executables are aligned to the template’s 2.6.6
+patch. Resonance’s Vitest declaration and dependency ordering are aligned as well;
+documented per-simulation configuration exceptions remain intact. All ten pass the final
+template-drift check. The installer sorted package dependencies alphabetically, so the
+catalog checker’s shared-first ordering was reapplied afterward.
+
+| Repository | Commit | Passing unit tests |
+|---|---|---:|
+| DopplerEffect | `d42852d7` | 49 |
+| OscillationsAndChaos | `c8a05cbb` | 66 |
+| Resonance | `6746f831` | 471 |
+| QuantumPotential | `c44a3221` | 114 |
+| TrackLab | `d390385a` | 85 |
+| OpticsLab | `7ac1ee37` | 459 |
+| LadyBug | `02a19311` | 20 |
+| TheRamp | `f50d5ca3` | 25 |
+| MazeGame | `78872493` | 18 |
+| ElectricFieldOfDreams | `0ba28119` | 15 |
+
+Validation under Node v26.13.0: **1322 passing unit tests**, lint, all type checks,
+production builds, architecture checks, local compliance and template drift. These are
+17 additional regression cases beyond the 1,305-test review baseline. QuantumPotential’s
+full solver suite passed without weakening its performance assertions. A new Resonance
+test initially inferred a narrow Property type; its generic annotation was corrected and
+the complete type check passed afterward.
+
+All ten also pass pointer and keyboard browser fuzz: **20 passing browser tests**, seed
+`20261116`, 10 seconds of fuzz activity per mode, headless Playwright Chromium. Localhost
+access was required because the sandbox blocked the Vite test servers. No live camera or
+physical hardware validation, manual screen-reader audit or remote security-settings
+verification is claimed.
+
+Each owning repository contains its review report and changes in the commit listed above.
+All ten working trees were clean after their commits. Local validation logs and scripts
+are retained in the ignored workspace directory `.review-artifacts/oldest-fixes/`.
+Commits are local; no push or deployment was performed.
