@@ -1729,3 +1729,27 @@ snapshots, baseline commit IDs, expression-equivalence results, per-repository v
 logs and extraction counts. Changes were committed separately in all twenty independent member repositories.
 Real PASCO devices were not available; this review validates the existing simulated and
 mocked acquisition paths rather than physical sensor operation.
+
+
+## Numeric constants hygiene, simulations 21–40 — 2026-11-16
+
+Reviewed the batch-2 hoist against `Baton/skills/scenerystack-constants` and the batch-1
+follow-up bar (`fix(constants): correct mislabeled hoist names and units`). The hoist was
+behavior-equivalent (empty AST equivalence diff, unused-extracted empty, lint/check/test/build/
+architecture/fuzz green under Node 26), but unclean: AST-derived names
+(`FONT_FONT_SIZE`, `LEFT_LEFT`/`TOP_TOP`/`BOTTOM_BOTTOM`, `X_X`/`Y_Y`, `P_H_*`, `__LABEL_*`,
+`OPACITY_OPACITY`, `LINE_WIDTH_LINE_WIDTH`), wrong unit comments (metres/V/m/counts/ratios/
+magnitudes tagged as px), a few leftover duplicate literals, and missing AGENTS pointers.
+
+Applied the same hygiene pass as batch 1 in every sim (new commit; hoist commit left intact):
+renamed opaque keys from consumer context, corrected unit JSDoc, wired CapacitorLab
+`CLCalibration` to shared spacing settings, fixed ElectricFieldMapper metre/V/m labels and the
+ExploreScreenView `0.18` drag margin, corrected MolScope stride/`toFixed` labels, collapsed
+HeatTransfer’s duplicated `CANVAS_SCALE`, and documented root `*Constants.ts` in AGENTS for
+FieldBoundary, InterferometryLab, CapacitorLab, SpectroscopyLab, MotionSensor, and MotionMatch.
+Icon polyline `SEGMENT_*` keys and import-before-JSDoc placement were left as in batch 1.
+
+Opaque doubled/illegal names above are cleared in all twenty Constants modules. Each sim’s
+`fix(constants)` commit passed `lint` and `check` (unit tests rerun where exercised by the
+agents). Not pushed.
+
