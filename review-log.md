@@ -1670,3 +1670,62 @@ Browser pointer/keyboard fuzz: all twenty simulations pass (40 browser tests). T
 
 Sensor protocol and calibration refactors were checked with existing tests and expression equivalence;
 physical PASCO hardware was not available for testing.
+
+
+## Numeric constants review, simulations 21–40 — 2026-11-15
+
+Continued the previous batch’s **newest-first ordering by each repository’s first-commit
+timestamp** (not catalog/alphabetical order). The next twenty run from LewisStructures
+through HeatTransfer.
+
+Hoisted **5,027 numeric literal occurrences across 537 consumer source files** into the
+existing root `*Constants.ts` modules. Grouped settings use `as const`; the extraction covers
+layout, typography, rendering, defaults, initial instrument positions, solver limits,
+tolerances, sample timing and manual time steps. Values and equations are unchanged.
+ElectricFieldMapper’s architecture guidance now points to its root constants module.
+
+Preserved mathematical coefficients, array/tuple indices, scientific and protocol tables,
+generated coastlines, shader implementations and scientific colour data. FluidPressureAndFlow’s
+documented pool/pipe geometry constants remain local to those models.
+
+| Position | Simulation | Consumer source files updated | Numeric occurrences extracted |
+|---:|---|---:|---:|
+| 21 | LewisStructures | 30 | 204 |
+| 22 | EquilibriumLab | 36 | 321 |
+| 23 | CalorimetryLab | 28 | 409 |
+| 24 | Electrochemistry | 20 | 386 |
+| 25 | TitrationLab | 24 | 320 |
+| 26 | PeriodicTrends | 19 | 140 |
+| 27 | LightAndAtoms | 26 | 281 |
+| 28 | SpectroscopyLab | 36 | 500 |
+| 29 | MolScope | 22 | 128 |
+| 30 | ElectricFieldMapper | 16 | 179 |
+| 31 | MercuryElongations | 20 | 197 |
+| 32 | CapacitorLab | 35 | 172 |
+| 33 | MotionSensor | 18 | 172 |
+| 34 | FluidPressureAndFlow | 45 | 501 |
+| 35 | MotionMatch | 17 | 132 |
+| 36 | RadioactivityAndStatistics | 19 | 165 |
+| 37 | StandingWaves | 36 | 260 |
+| 38 | FieldBoundary | 23 | 165 |
+| 39 | InterferometryLab | 37 | 262 |
+| 40 | HeatTransfer | 30 | 133 |
+
+An AST comparison expanded every extracted setting back to its original expression and
+confirmed equivalence across all 537 changed consumer modules. It also verified that all
+pre-existing root constants and registrations remain unchanged. Numeric annotations preserve
+writable numeric locals and default-parameter types where literal inference would narrow them.
+
+Validation under Node 26: all twenty simulations pass `lint`, `check`, `test`, `build`,
+`check:architecture` and `git diff --check` (161 test files; 1,965 passing unit tests).
+The `brand.js` first-import requirement is preserved in every entrypoint.
+
+Browser pointer/keyboard fuzz: all twenty simulations pass (40 browser tests, 10 seconds
+of fuzz activity per mode). The sandbox initially blocked localhost server binding; the
+same unchanged test commands passed with local-server access enabled.
+
+Evidence is under `/tmp/constants-batch2/`: the selected repositories, original source
+snapshots, baseline commit IDs, expression-equivalence results, per-repository validation
+logs and extraction counts. Changes were committed separately in all twenty independent member repositories.
+Real PASCO devices were not available; this review validates the existing simulated and
+mocked acquisition paths rather than physical sensor operation.
