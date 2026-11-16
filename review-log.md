@@ -1619,3 +1619,54 @@ under `artifacts/CapacitorLab/`. These temporary artifacts are outside version c
 This is a single-seed browser fuzz smoke review; it does not establish exhaustive screen,
 physics, accessibility, or physical-sensor coverage. Unit tests, lint, type checks, and builds
 were not rerun because no application source or test harness changed.
+
+
+## Numeric constants review — 2026-11-15
+
+Selected the twenty newest catalogued simulations by the timestamp of each local repository’s first
+commit (2026-10-31 through 2026-11-12), rather than its most recent maintenance commit.
+
+Extracted **5,091 numeric literal occurrences across 483 source files** in nineteen member repos into
+their existing root `*Constants.ts` modules. The settings cover layout, typography, rendering, defaults,
+solver limits, tolerances, random-generator parameters, acquisition timing and calibration. Grouped
+constants use `as const`; unit comments distinguish physical quantities, pixels, counts and ratios.
+SimplifiedMRI’s existing constants coverage needed no source changes in this pass.
+
+The review preserves mathematical coefficients, array/tuple indices, named scientific and protocol
+tables, and shader implementations. This is a review of meaningful settings, not a ban on every
+numeric literal. Template infrastructure and scientific snapshots were left intact.
+
+An AST comparison resolved extracted constants back to their original expressions and confirmed
+equivalence for all 483 changed consumer modules. Explicit numeric annotations preserve the original
+parameter and local-variable types where literal inference changed after hoisting.
+
+| Simulation | Source files updated | Numeric occurrences extracted |
+|---|---:|---:|
+| DataLab | 9 | 65 |
+| Lasers | 3 | 26 |
+| NuclideChart | 29 | 339 |
+| HRDiagram | 16 | 120 |
+| SimplifiedMRI | 0 | 0 |
+| ParticleZoo | 20 | 137 |
+| ColliderLab | 11 | 101 |
+| DiffractionLab | 12 | 37 |
+| BackwardAcceleration | 25 | 263 |
+| BiomechanicsArm | 12 | 130 |
+| CartCollisions | 26 | 221 |
+| PhotonInteractions | 31 | 442 |
+| PlanetaryConfigurations | 36 | 346 |
+| HabitabilityLab | 40 | 459 |
+| ExoplanetsDatabase | 28 | 285 |
+| TransitHunter | 39 | 538 |
+| StellarWobble | 36 | 410 |
+| ElectronConfiguration | 13 | 249 |
+| RelativisticDynamics | 32 | 382 |
+| QuantumAtom3D | 65 | 541 |
+
+Validation under Node 26: all twenty simulations pass `lint`, `check`, `test`, `build`,
+`check:architecture` and `git diff --check` (154 test files; 1,455 passing unit tests).
+Browser pointer/keyboard fuzz: all twenty simulations pass (40 browser tests). The required
+`brand.js` first-import order was also verified in all twenty entrypoints.
+
+Sensor protocol and calibration refactors were checked with existing tests and expression equivalence;
+physical PASCO hardware was not available for testing.
