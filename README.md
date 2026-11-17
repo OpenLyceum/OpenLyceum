@@ -31,6 +31,9 @@ repos already present are skipped:
 ./bootstrap.sh --https         # clone over HTTPS instead of SSH
 ```
 
+A dry run uses the local Baton checkout and catalog without fetching updates.
+On a fresh workspace, run the regular setup first to enable previews.
+
 The cloned repos are git-ignored here, so `git status` in this superproject stays clean no
 matter what state the member repos are in.
 

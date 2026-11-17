@@ -20,6 +20,25 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Preview using the local Baton checkout before any clone or pull.
+option_value=0
+for arg in "$@"; do
+  if [[ "$option_value" -eq 1 ]]; then
+    option_value=0
+    continue
+  fi
+  case "$arg" in
+    --type|--status|--lineage|--only|--skip|--catalog) option_value=1 ;;
+    -n|--dry-run)
+      if [[ ! -x "$ROOT/Baton/scripts/clone-fleet.sh" ]]; then
+        echo "Dry run requires a local Baton checkout. Run ./bootstrap.sh without --dry-run to set up the workspace." >&2
+        exit 1
+      fi
+      exec "$ROOT/Baton/scripts/clone-fleet.sh" "$@"
+      ;;
+  esac
+done
+
 # The org name is read from this checkout's own origin remote, so renaming the
 # organization needs no edit here. Everything downstream reads it from Baton's
 # catalog instead; this is the one place that cannot, since Baton is what we are

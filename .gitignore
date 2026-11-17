@@ -10,6 +10,7 @@
 !/.claude
 !/README.md
 !/bootstrap.sh
+!/test-bootstrap.sh
 !/AGENTS.md
 !/CONVENTIONS.md
 !/ACCESSIBILITY.md
