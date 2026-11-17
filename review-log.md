@@ -7,8 +7,8 @@
 > and template drift / GitHub settings clean. Do **not** treat OPEN probe cells as a
 > current work queue without re-checking the named path. Remaining live follow-ups of
 > note: intentional pointer-only / dual-input patterns (palettes, AccessibleSlider +
-> DragListener, globe/caliper), documented color physics LUTs, and ~14 sims still on
-> Knip `unused-mode: advisory` (see `Baton/doc/knip-reviewed-baselines.md`). About 30
+> DragListener, globe/caliper) and documented color physics LUTs. Knip callers are all
+> `unused-mode: required` (see `Baton/doc/knip-reviewed-baselines.md`). About 30
 > catalog sims were never scored here.
 
 Scored against `Baton/skills/*/SKILL.md`, distilled once on 2026-09-29. Each cell is `follow`, `gap`, or `n/a`. A gap lists at most one path. Generated data under `**/generated/**` and locale JSON are excluded from greps. `npm run lint`, `check`, `test`, and `build` are recorded separately and are not re-read from the code-review skill.
@@ -1539,20 +1539,21 @@ Six distinct correctness findings were identified. All were corrected in the fol
 | P2 | Inverted bounds filter no planets but display an ordered archive interval | ExoplanetsDatabase |
 
 No actionable correctness defect was confirmed in the reviewed StellarWobble or
-ElectronConfiguration paths. Per-repository evidence, recommendations, and limitations:
+ElectronConfiguration paths. The completed per-repository reports were removed during
+the November documentation cleanup; the reviewed repositories were:
 
-- [HabitabilityLab](HabitabilityLab/doc/correctness-review-2026-11-06.md)
-- [ExoplanetsDatabase](ExoplanetsDatabase/doc/correctness-review-2026-11-06.md)
-- [TransitHunter](TransitHunter/doc/correctness-review-2026-11-06.md)
-- [StellarWobble](StellarWobble/doc/correctness-review-2026-11-06.md)
-- [ElectronConfiguration](ElectronConfiguration/doc/correctness-review-2026-11-06.md)
+- HabitabilityLab
+- ExoplanetsDatabase
+- TransitHunter
+- StellarWobble
+- ElectronConfiguration
 
 Node v26.13.0. All five passed lint, all type checks, production builds, existing unit tests
 (495 total), and pointer/keyboard fuzz (10 seconds per mode). All 18 screens across the four
 astronomy apps initialized and reset at desktop/phone sizes with randomized listener order.
 ElectronConfiguration's 18 existing browser tests passed, including all screens in three locales.
-Eight independent diagnostic assertions failed and reproduced the six findings; their source is
-preserved in the relevant reports, and temporary test files were removed.
+Eight independent diagnostic assertions failed and reproduced the six findings; their source probes
+were recorded in the completed reports, and temporary test files were removed.
 
 Local compliance passed with warnings; remote security checks were skipped (`gh` unavailable).
 Template drift was limited to Vitest declarations in HabitabilityLab, ExoplanetsDatabase,
@@ -1767,20 +1768,20 @@ agents). Not pushed.
 
 ## Oldest ten simulations — functional code review — 2026-11-16
 
-Selected catalogued simulations by their earliest root commit's author timestamp (source-history age, not GitHub creation date). All ten started with clean working trees. Reports record the exact reviewed commits and reproducible findings. The findings below describe the review baseline; the remediation entry records their resolution.
+Selected catalogued simulations by their earliest root commit's author timestamp (source-history age, not GitHub creation date). All ten started with clean working trees. The completed reports recorded the exact reviewed commits and reproducible findings; they were removed during the November documentation cleanup. The findings below describe the review baseline; the remediation entry records their resolution.
 
 | Oldest first | First commit date | Existing tests | Review |
 |---|---|---:|---|
-| DopplerEffect | 2025-03-26 | 47 | [Report](DopplerEffect/doc/code-review-2026-11-16.md) |
-| OscillationsAndChaos | 2025-10-22 | 66 | [Report](OscillationsAndChaos/doc/code-review-2026-11-16.md) |
-| Resonance | 2025-11-02 | 469 | [Report](Resonance/doc/code-review-2026-11-16.md) |
-| QuantumPotential | 2025-11-11 | 110 | [Report](QuantumPotential/doc/code-review-2026-11-16.md) |
-| TrackLab | 2026-02-17 | 81 | [Report](TrackLab/doc/code-review-2026-11-16.md) |
-| OpticsLab | 2026-02-24 | 459 | [Report](OpticsLab/doc/code-review-2026-11-16.md) |
-| LadyBug | 2026-05-24 | 17 | [Report](LadyBug/doc/code-review-2026-11-16.md) |
-| TheRamp | 2026-05-24 | 23 | [Report](TheRamp/doc/code-review-2026-11-16.md) |
-| MazeGame | 2026-05-25 | 18 | [Report](MazeGame/doc/code-review-2026-11-16.md) |
-| ElectricFieldOfDreams | 2026-05-26 | 15 | [Report](ElectricFieldOfDreams/doc/code-review-2026-11-16.md) |
+| DopplerEffect | 2025-03-26 | 47 | Completed; report removed |
+| OscillationsAndChaos | 2025-10-22 | 66 | Completed; report removed |
+| Resonance | 2025-11-02 | 469 | Completed; report removed |
+| QuantumPotential | 2025-11-11 | 110 | Completed; report removed |
+| TrackLab | 2026-02-17 | 81 | Completed; report removed |
+| OpticsLab | 2026-02-24 | 459 | Completed; report removed |
+| LadyBug | 2026-05-24 | 17 | Completed; report removed |
+| TheRamp | 2026-05-24 | 23 | Completed; report removed |
+| MazeGame | 2026-05-25 | 18 | Completed; report removed |
+| ElectricFieldOfDreams | 2026-05-26 | 15 | Completed; report removed |
 
 Six confirmed functional findings:
 
