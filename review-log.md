@@ -1,5 +1,16 @@
 # Fleet skill-conformance review
 
+> **Status (2026-11-17):** This log is a historical snapshot from 2026-09-29 plus
+> remediation notes through 2026-10-02. Many `gap` rows below are **stale** — live
+> greps on 2026-11-17 found `Math.random` cleared, most hardcoded `Text` remediations
+> already applied, preferences/i18n/memory-leak/stub keyboard-help present fleet-wide,
+> and template drift / GitHub settings clean. Do **not** treat OPEN probe cells as a
+> current work queue without re-checking the named path. Remaining live follow-ups of
+> note: intentional pointer-only / dual-input patterns (palettes, AccessibleSlider +
+> DragListener, globe/caliper), documented color physics LUTs, and ~14 sims still on
+> Knip `unused-mode: advisory` (see `Baton/doc/knip-reviewed-baselines.md`). About 30
+> catalog sims were never scored here.
+
 Scored against `Baton/skills/*/SKILL.md`, distilled once on 2026-09-29. Each cell is `follow`, `gap`, or `n/a`. A gap lists at most one path. Generated data under `**/generated/**` and locale JSON are excluded from greps. `npm run lint`, `check`, `test`, and `build` are recorded separately and are not re-read from the code-review skill.
 
 Prior fuzz (`fuzz-results.md`, 2026-08-19) is cited, not re-run. Sims absent from that run: CapacitorLab, FluidPressureAndFlow, MercuryElongations, MotionMatch, MotionSensor, QuantumPotential, RadioactivityAndStatistics.
