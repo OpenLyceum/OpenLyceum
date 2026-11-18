@@ -10,6 +10,10 @@
 > DragListener, globe/caliper) and documented color physics LUTs. Knip callers are all
 > `unused-mode: required` (see `Baton/doc/knip-reviewed-baselines.md`). About 30
 > catalog sims were never scored here.
+>
+> **Superseded (2026-11-17):** the probe sheet below is now automated as
+> `Baton/scripts/check-skill-conformance.mjs` (`--all --summary` for live counts). Its
+> `fail`-level probes run in every sim's compliance CI. Use the script, not this table.
 
 Scored against `Baton/skills/*/SKILL.md`, distilled once on 2026-09-29. Each cell is `follow`, `gap`, or `n/a`. A gap lists at most one path. Generated data under `**/generated/**` and locale JSON are excluded from greps. `npm run lint`, `check`, `test`, and `build` are recorded separately and are not re-read from the code-review skill.
 
